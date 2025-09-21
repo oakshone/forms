@@ -334,8 +334,8 @@ header {
 }
 header span {
   font-size: 1.6rem;
-  font-weight: 300;
-  color: #1d295f;
+  font-weight: bold;
+  color: black;
 }
 
 div.allcards {
@@ -453,6 +453,10 @@ footer section.contact ion-icon {
   color: white;
   padding-right: 5px;
 }
+footer section.contact a {
+  color: black;
+  text-decoration: none;
+}
 footer section.social {
   display: flex;
   justify-content: center;
@@ -471,6 +475,8 @@ footer section.location {
   font-size: 1.5rem;
 }
 footer p.legal {
+  padding-top: 2rem;
+  justify-content: center;
   margin: 0;
   font-weight: 300;
   text-align: center;
@@ -478,6 +484,19 @@ footer p.legal {
 
 @media only screen and (min-width: 35rem) {
   /* NAVIGATION STUFF GOES HERE  */
+  nav ul {
+    display: flex;
+    justify-content: flex-start;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+  }
+  nav ul li a {
+    margin: 10px 0;
+  }
+  nav ul li a:hover {
+    -webkit-text-decoration: underline 2px white;
+            text-decoration: underline 2px white;
+  }
   div.allcards {
     display: flex;
     flex-wrap: wrap;
@@ -494,7 +513,7 @@ footer p.legal {
 }
 @media only screen and (min-width: 64rem) {
   header, nav, main {
-    max-width: 960px;
+    max-width: auto;
     margin: auto;
   }
   div.allcards section {
@@ -516,6 +535,6 @@ footer p.legal {
     justify-content: flex-end;
   }
   ul.menuLinks a:hover {
-    background-color: red;
+    background-color: rgba(255, 255, 255, 0.2);
   }
 }
