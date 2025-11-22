@@ -17,14 +17,15 @@ body {
     font-family: $defaultFont;
     font-weight: $lightWeight;
     min-width: 320px;
+    display: grid;
 }
 
 
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {border-bottom: 1px solid $greyColor;}
 header {
-    display: flex;
-    grid-template-columns: 50px auto;
+    display: grid;
+    grid-template-columns: 50px auto 44px;
     column-gap: $gutter;
     align-items: center; //vertically
     padding: .5rem $gutter;
@@ -39,44 +40,45 @@ header {
 
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
-nav {
-    background-color: #e5245c;
+div#navWrapper {
+    grid-row-start: 4;
 }
-#myButton::before {
-    content: "\2630";
-}
-#myButton {
-    border: none;
-    background: none;
-    color: white;
-    font-size: 2rem;
-    padding: 0;
-    width: 44px;
+#top a, #navLinks > a {
+    display: block;
+    text-align: right;
+    font-size: 1.6rem;
     height: 44px;
-    font-weight: $lightWeight;
-    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+
 }
-ul.menuLinks {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: none;
+#top a {
+    font-size: 2rem;
+}
+#navLinks > a {
+    padding: 15px 13px 0 0;
+}
+nav {
+    height: 100vh;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+    }
     li a {
-        color: #fff;
         display: block;
-        padding: .75rem $gutter;
+        color: $primaryColor;
+        padding: .9rem 2vw;
         text-decoration: none;
+        text-align: cen;
+        border-bottom: 1px solid $greyColor;
     }
     li.active a {
-        background-color: rgba(255,255,255,0.2);
+        color: $secondaryColor;
     }
-} // end of unordered
-ul.open.menuLinks {
-    display: block;
-}
-#myButton.open::before {
-    content: "x";
-}
+} // end nav
 
 
 
@@ -169,6 +171,4 @@ input[type=submit] {
 input[type=text] {
     font-size: 1rem;
 }
-input
-
 } // end form
